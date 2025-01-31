@@ -6,7 +6,6 @@ import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class SendMsgInitiator extends OneShotBehaviour {
-
     private Agent myAgent;
     private String data;
 
@@ -14,8 +13,6 @@ public class SendMsgInitiator extends OneShotBehaviour {
         this.myAgent = myAgent;
         this.data = data;
     }
-
-
     public void action(){
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         AID receiver1 = new AID("FirstAgent",false);
@@ -28,11 +25,5 @@ public class SendMsgInitiator extends OneShotBehaviour {
         myAgent.send(msg);
         System.out.println("Я агент-инициатор " + myAgent.getLocalName() +
                 " отправил всем агентам значения для построения " + data);
-        // Пауза
-        try {
-            Thread.sleep(0);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
