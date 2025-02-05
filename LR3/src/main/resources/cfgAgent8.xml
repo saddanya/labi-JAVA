@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg>
+    <name>Agent8</name>
+    <initiator>False</initiator>
+    <search>False</search>
+    <nearInf>
+        <nears>
+            <near>Agent4</near>
+            <near>Agent5</near>
+            <near>Agent6</near>
+            <near>Agent7</near>
+            <near>Agent9</near>
+        </nears>
+        <weights>
+            <weight>15</weight>
+            <weight>15</weight>
+            <weight>17</weight>
+            <weight>18</weight>
+            <weight>22</weight>
+        </weights>
+    </nearInf>
+</cfg>
