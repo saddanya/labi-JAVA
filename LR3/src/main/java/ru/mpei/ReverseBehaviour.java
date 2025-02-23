@@ -19,7 +19,7 @@ public class ReverseBehaviour extends Behaviour {
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         keyRevers = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
     }
 
@@ -52,12 +52,4 @@ public class ReverseBehaviour extends Behaviour {
         return false;
     }
 
-//    // Метод для вычисления общей длины пути
-//    private int calculateTotalWeight(List<String> path) {
-//        int totalWeight = 0;
-//        for (int i = 1; i < path.size(); i += 2) {
-//            totalWeight += Integer.parseInt(path.get(i));
-//        }
-//        return totalWeight;
-//    }
 }

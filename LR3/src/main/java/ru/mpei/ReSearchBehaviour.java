@@ -12,16 +12,17 @@ import java.util.List;
 
 public class ReSearchBehaviour extends Behaviour {
     AgentCfg cfg;
-    List<String> AgentsList = new ArrayList<>();
     MessageTemplate key;
 
     public ReSearchBehaviour(AgentCfg cfg) {
         this.cfg = cfg;
     }
+
     @Override
-    public void onStart(){
+    public void onStart() {
         key = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
     }
+
     @Override
     public void action() {
         ACLMessage msgInSearch = myAgent.receive(key);
@@ -35,7 +36,7 @@ public class ReSearchBehaviour extends Behaviour {
 
             // Агент искомый формирует сообщение для обратной передачи
             ACLMessage reverseMsg = new ACLMessage(ACLMessage.REQUEST);
-            reverseMsg.setContent(msgInSearch.getContent() +","+ myAgent.getLocalName());
+            reverseMsg.setContent(msgInSearch.getContent() + "," + myAgent.getLocalName());
             reverseMsg.addReceiver(new AID(path.get(path.size() - 2), false)); // Отправляем предшественнику
             //System.out.println(myAgent.getLocalName() + " отправляет " + path.get(path.size()-2) + " обратное сообщение: " + reverseMsg.getContent());
             myAgent.send(reverseMsg);
@@ -48,14 +49,4 @@ public class ReSearchBehaviour extends Behaviour {
     public boolean done() {
         return false;
     }
-
-
-//    // Метод для вычисления общей длины пути
-//    private int calculateTotalWeight(List<String> path) {
-//        int totalWeight = 0;
-//        for (int i = 1; i < path.size(); i += 2) {
-//            totalWeight += Integer.parseInt(path.get(i));
-//        }
-//        return totalWeight;
-//    }
 }

@@ -28,7 +28,7 @@ public class RequestBehaviour extends Behaviour {
     public void action() {
         ACLMessage msgIn = myAgent.receive(key);
         if (msgIn != null){
-            //System.out.println(myAgent.getLocalName() + " получил сообщение от "+ msgIn.getSender().getLocalName() +" содержанием: "+ msgIn.getContent());
+            System.out.println(myAgent.getLocalName() + " получил сообщение от "+ msgIn.getSender().getLocalName() +" содержанием: "+ msgIn.getContent());
             String[] content = msgIn.getContent().split(",");
 
             // Создаем массив агентов в пути
